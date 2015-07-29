@@ -1,0 +1,263 @@
+macro refinement {
+  lock phracon
+  do talknpc 63 60 c r2 c r0 c r0 c
+  release phracon
+}
+
+automacro refine_start0 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start1 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +1 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start2 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +2 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start3 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +3 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start4 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +4 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start5 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +5 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start6 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +6 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start7 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +7 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start8 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +8 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start9 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +9 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro refine_start10 {
+  priority 1
+  inventory Phracon >= 1
+  equipped leftHand +10 Composite Bow [4]
+  run-once 1
+  call refinement
+}
+
+automacro success1 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +1 Composite Bow [4]
+  run-once 1
+  call {
+   do eq Composite Bow [4]
+   release all
+   }
+}
+
+automacro success2 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +2 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +1 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success3 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +3 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +2 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success4 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +4 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +3 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success5 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +5 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +4 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success6 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +6 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +5 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success7 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +7 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +6 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success8 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +8 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +7 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success9 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +9 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +8 Composite Bow [4]
+   release all
+   }
+}
+
+automacro success10 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +10 Composite Bow [4]
+  run-once 1
+  call {
+   do eq +9 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail5 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+4 Composite Bow [4]" >= 1
+  call {
+   do eq +4 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail6 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+5 Composite Bow [4]" >= 1
+  call {
+   do eq +5 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail7 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+6 Composite Bow [4]" >= 1
+  call {
+   do eq +6 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail8 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+7 Composite Bow [4]" >= 1
+  call {
+   do eq +7 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail9 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+8 Composite Bow [4]" >= 1
+  call {
+   do eq +8 Composite Bow [4]
+   release all
+   }
+}
+
+automacro fail10 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+9 Composite Bow [4]" >= 1
+  call {
+   do eq +9 Composite Bow [4]
+   release all
+   }
+}
+
+automacro phracon {
+    priority 0
+    inventory Phracon <= 5
+    run-once 1
+    call {
+        do autostorage
+        release all
+    }
+}

@@ -1,0 +1,37 @@
+automacro hunt {
+   location prontera
+   call start_hunt
+   run-once 1
+}
+
+macro start_hunt {
+   do talk @npc (162 193)
+   do talk @npc (159 192)
+   do talk resp 0
+   do tele
+}
+
+automacro go_home {
+   sp < 20%
+   call {
+       do c @go 0
+       do talk @npc (162 193)
+       release hunt
+   }
+}
+
+automacro go_home2 {
+   hp < 20%
+   call {
+       do c @go 0
+       do talk @npc (162 193)
+       release hunt
+   }
+}
+
+automacro get_arrow {
+   inventory Holy Arrow < 100
+       call {
+           do autostorage
+       }
+}

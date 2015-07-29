@@ -1,0 +1,191 @@
+macro refinement {
+  lock oridecon
+  do move prt_in 58 63
+  do talknpc 63 60 c r2 c r0 c r0 c
+  release oridecon
+}
+
+automacro refine_start0 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start1 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +1 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start2 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +2 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start3 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +3 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start4 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +4 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start5 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +5 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start6 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +6 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+automacro refine_start7 {
+  priority 1
+  inventory Oridecon >= 1
+  equipped leftHand +7 Elven Bow [1]
+   
+  run-once 1
+  call refinement
+}
+
+
+automacro success1 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +1 Elven Bow [1]
+  run-once 1
+  call {
+   do eq Elven Bow [1]
+   release all
+   }
+}
+
+automacro success2 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +2 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +1 Elven Bow [1]
+   release all
+   }
+}
+
+automacro success3 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +3 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +2 Elven Bow [1]
+   release all
+   }
+}
+
+automacro success4 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +4 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +3 Elven Bow [1]
+   release all
+   }
+}
+
+automacro success5 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +5 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +4 Elven Bow [1]
+   release all
+   }
+}
+
+automacro success6 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +6 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +5 Elven Bow [1]
+   release all
+   }
+}
+
+automacro success7 {
+  console /You successfully refined a weapon!/
+  equipped leftHand +7 Elven Bow [1]
+  run-once 1
+  call {
+   do eq +6 Elven Bow [1]
+   release all
+   }
+}
+
+
+automacro fail5 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+4 Elven Bow [1]" >= 1
+  call {
+   do eq +4 Elven Bow [1]
+   release all
+   }
+}
+
+automacro fail6 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+5 Elven Bow [1]" >= 1
+  call {
+   do eq +5 Elven Bow [1]
+   release all
+   }
+}
+
+automacro fail7 {
+  console /You failed to refine a weapon!/
+  equipped leftHand none
+  inventory "+6 Elven Bow [1]" >= 1
+  call {
+   do eq +6 Elven Bow [1]
+   release all
+   }
+}
+
+
+automacro oridecon {
+    priority 0
+    inventory Oridecon <= 5
+    run-once 1
+    call {
+        do autostorage
+        release all
+    }
+}

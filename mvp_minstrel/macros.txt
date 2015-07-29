@@ -1,0 +1,172 @@
+automacro hunt {
+    pm "start" Omniscient
+    call hunt_doppel
+}
+
+macro hunt_doppel { 
+    do c @go 0
+    do autostorage
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 16
+    pause 1
+    do talk resp 2
+    pause 1
+    do tele
+}
+
+automacro hunt2 {
+    console /Get MVP item Cursed Ruby/
+    call hunt_dracula
+    timeout 20
+}
+
+macro hunt_dracula {
+    lock hunt
+    do c @go 0
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 16
+    pause 1
+    do talk resp 1
+    pause 1
+    do tele
+}
+
+automacro hunt3 {
+    console /Get MVP item Yggdrasil Berry/
+    call hunt_maya
+    timeout 20
+}
+
+macro hunt_maya {
+    lock hunt2
+    do c @go 0
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 2
+    pause 1
+    do talk resp 1
+    pause 1
+    do tele
+}
+
+automacro hunt4 {
+    console /Get MVP item 1carat Diamond/
+    call hunt_gtb
+    timeout 20
+}
+
+macro hunt_gtb {
+    lock hunt3
+    do c @go 0
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 11
+    pause 1
+    do talk resp 3
+    pause 1
+    do tele
+}
+
+automacro hunt5 {
+    console /Get MVP item Gold Ring/
+    call hunt_dl
+    timeout 20
+}
+
+macro hunt_dl {
+    lock hunt4
+    do c @go 0
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 17
+    pause 1
+    do talk resp 5
+    pause 1
+    do tele
+}
+
+automacro hunt6 {
+    console /Get MVP item Skull/
+    call hunt_dl
+    timeout 20
+}
+
+macro hunt_drake {
+    lock hunt5
+    do c @go 0
+    pause 5
+    do talk @npc (162 193)
+    pause 2
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 3
+    pause 1
+    do talk resp 35
+    pause 1
+    do talk resp 1
+    pause 1
+    do tele
+}
+
+automacro end_hunt {
+    console /Get MVP item White Potion/
+    call end
+}
+
+macro end {
+    do c @go 0
+    pause 2
+    do quit
+}
+
+automacro sp {
+    sp < 10%
+    call replenish
+    timeout 10
+}
+
+macro replenish {
+    do c @go 0
+    pause 2
+    do talk @npc (162 193)
+    pause 1
+    do talk @npc (159 192)
+    pause 1
+    do talk resp 0
+    pause 1
+    do tele
+}
+
+automacro resu {
+    hp < 2%
+    location prontera
+    call replenish
+    timeout 10
+}
